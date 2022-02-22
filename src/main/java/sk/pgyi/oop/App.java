@@ -131,6 +131,23 @@ public class App {
         for (int i = 0; i<pole.length; i++){
             System.out.println(Arrays.toString(pole[i]));
         }
+
+        // Objekty - triedy
+        Auto skoda = new Auto();
+        Auto bmw = new Auto();
+
+        skoda.one = 1;
+        bmw.one = 2;
+
+        if(skoda.one == bmw.one){
+            System.out.println("rovnake");
+        } else {
+            System.out.println("rozne");
+        }
+
+        skoda.stavNadrze = 100;
+        skoda.drive(100);
+        System.out.println(skoda.stavNadrze);
     }
 
     public static int scitaj(int a, int b) {
