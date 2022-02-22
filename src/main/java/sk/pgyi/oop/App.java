@@ -3,6 +3,7 @@ package sk.pgyi.oop;
 public class App {
     public static void main(String[] args){
         System.out.println("Ahooj svet");
+        System.out.println("5 + 6 je " + scitaj(5,6));
 
 //        primitivne datove typy
 
@@ -68,5 +69,9 @@ public class App {
             b++;
             System.out.println("fake for b = " + b);
         } while (b<6);
+    }
+
+    public static int scitaj(int a, int b) {
+        return a+b;
     }
 }
