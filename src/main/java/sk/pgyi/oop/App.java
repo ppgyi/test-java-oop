@@ -116,9 +116,21 @@ public class App {
             g[i] = i + 1;
         }
         System.out.println(Arrays.equals(f,g));
+
+        // Ku spred operatoru
+        vypis("text", 4,5,67,876,4,2,90);
     }
 
     public static int scitaj(int a, int b) {
         return a+b;
+    }
+
+    // Pouzitie spred operatora to je ... (berie sa to ako pole)
+    public static void vypis(String text, int... pole){
+        System.out.println(text);
+        System.out.println(Arrays.toString(pole));
+//        Vypise:
+//        text
+//        [4, 5, 67, 876, 4, 2, 90]
     }
 }
