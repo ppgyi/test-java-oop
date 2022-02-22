@@ -119,6 +119,18 @@ public class App {
 
         // Ku spred operatoru
         vypis("text", 4,5,67,876,4,2,90);
+
+        // Nerovnomerne 2D polia
+        int[][] pole = new int[10][];
+        for(int i = 0; i<pole.length; i++){
+            pole[i] = new int[i+1];
+            for(int j = 0; j<pole[i].length; j++){
+                pole[i][j] = j;
+            }
+        }
+        for (int i = 0; i<pole.length; i++){
+            System.out.println(Arrays.toString(pole[i]));
+        }
     }
 
     public static int scitaj(int a, int b) {
