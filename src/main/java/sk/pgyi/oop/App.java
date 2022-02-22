@@ -69,6 +69,24 @@ public class App {
             b++;
             System.out.println("fake for b = " + b);
         } while (b<6);
+
+//        POLIA
+        System.out.println();
+
+        int[] mojePole = new int[10];
+
+        for(int i = 0; i < mojePole.length; i++){
+            if (i == 0){
+                mojePole[i] = 1;
+                continue;
+            }
+
+            mojePole[i] = mojePole[i - 1] * 2;
+        }
+
+        for(int i = 0; i < mojePole.length; i++){
+            System.out.println(i + " : " + mojePole[i]);
+        }
     }
 
     public static int scitaj(int a, int b) {
