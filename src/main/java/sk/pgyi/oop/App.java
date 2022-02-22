@@ -1,6 +1,5 @@
 package sk.pgyi.oop;
 
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Objects;
 
 public class App {
@@ -101,8 +100,9 @@ public class App {
         System.out.println();
 
         String s = "a";
-        String d = s;
-        System.out.println(s == d); // Nespravny postup
+        // Toto je importovana class z netu na zadanie textu do consoly
+        String d = KeyboardInput.readString("Zadajte text");
+        System.out.println(s == d); // Nespravny postup porovnania objektov
         System.out.println(s.equals(d)); // Spravne
         System.out.println(Objects.equals(s, d)); // Spravne
     }
