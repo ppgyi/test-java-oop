@@ -1,5 +1,6 @@
 package sk.pgyi.oop;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class App {
@@ -105,6 +106,16 @@ public class App {
         System.out.println(s == d); // Nespravny postup porovnania objektov
         System.out.println(s.equals(d)); // Spravne
         System.out.println(Objects.equals(s, d)); // Spravne
+
+        // Porovnanie ARRAYS
+        System.out.println();
+
+        int[] f = new int[]{1,2,3};
+        int[] g = new int[3];
+        for(int i = 0; i<g.length; i++){
+            g[i] = i + 1;
+        }
+        System.out.println(Arrays.equals(f,g));
     }
 
     public static int scitaj(int a, int b) {
