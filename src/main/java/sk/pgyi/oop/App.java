@@ -1,5 +1,8 @@
 package sk.pgyi.oop;
 
+import java.security.spec.RSAOtherPrimeInfo;
+import java.util.Objects;
+
 public class App {
     public static void main(String[] args){
         System.out.println("Ahooj svet");
@@ -87,6 +90,21 @@ public class App {
         for(int i = 0; i < mojePole.length; i++){
             System.out.println(i + " : " + mojePole[i]);
         }
+
+//        Porovnavanie
+        System.out.println();
+
+        int x = 5;
+        int y = 5;
+        System.out.println(x == y);
+
+        System.out.println();
+
+        String s = "a";
+        String d = s;
+        System.out.println(s == d); // Nespravny postup
+        System.out.println(s.equals(d)); // Spravne
+        System.out.println(Objects.equals(s, d)); // Spravne
     }
 
     public static int scitaj(int a, int b) {
