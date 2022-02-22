@@ -53,5 +53,20 @@ public class App {
         for (int i=0; i<6; i++){
             System.out.println(i);
         }
+
+        int a = 0;
+        while(a<6){
+            System.out.println("fake for a = " + a);
+            a++;
+        }
+
+        System.out.println(); // Prazdny riadok
+//        prazdny riadok: "\n"
+
+        int b = 0;
+        do {
+            b++;
+            System.out.println("fake for b = " + b);
+        } while (b<6);
     }
 }
