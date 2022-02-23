@@ -3,8 +3,8 @@ package sk.pgyi.oop;
 public class Auto {
     public int pocetKolies;
     public int pocetDvery;
-    public double kapacitaNadrze;
-    public double stavNadrze;
+    private double kapacitaNadrze;
+    private double stavNadrze;
     public String nazov;
 
     private static final double FUEL_PER_KM = 0.5;
@@ -20,5 +20,13 @@ public class Auto {
         if (stavNadrze<0){
             stavNadrze=0;
         }
+    }
+
+    public double getStavNadrze() {
+        return stavNadrze;
+    }
+
+    public void setStavNadrze(double stavNadrze) {
+        this.stavNadrze = stavNadrze;
     }
 }

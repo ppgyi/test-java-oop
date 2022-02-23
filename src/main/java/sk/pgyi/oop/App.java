@@ -145,9 +145,11 @@ public class App {
             System.out.println("rozne");
         }
 
-        skoda.stavNadrze = 100;
+//        skoda.stavNadrze = 100; --- Ak by bolo public
+        skoda.setStavNadrze(100); // Teraz je private
         skoda.drive(100);
-        System.out.println(skoda.stavNadrze);
+//        System.out.println(skoda.stavNadrze); --- To iste, ak by bolo public
+        System.out.println(skoda.getStavNadrze()); // getter pri private
     }
 
     public static int scitaj(int a, int b) {
