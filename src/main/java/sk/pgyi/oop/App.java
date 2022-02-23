@@ -102,7 +102,7 @@ public class App {
 
         String s = "a";
         // Toto je importovana class z netu na zadanie textu do consoly
-        String d = KeyboardInput.readString("Zadajte text");
+        String d = "a"; // KeyboardInput.readString("Zadajte text");
         System.out.println(s == d); // Nespravny postup porovnania objektov
         System.out.println(s.equals(d)); // Spravne
         System.out.println(Objects.equals(s, d)); // Spravne
@@ -172,6 +172,21 @@ public class App {
         // popripade override (prepise, pretazi) metody matky.
         System.out.println(student.akoText());
         System.out.println(absolvent.akoText());
+
+        // Vrati vsetko aj s titulom, lebo Graduate zdedi vsetko z Contact
+        // ale pozor pri Contact je this.akoText, takze sa pouzije metoda akoText
+        // z Graduate, keby tam bolo super.akoText tak sa pouzije bez titulu
+        // ktore je v matke
+        System.out.println(absolvent);
+
+        // === ABSTRAKTNE TRIEDY ===
+        // absolvent.setFriends(new Graduate("Tomas", "Stary", "Bc."),
+        //                      new Graduate("Tomas", "Stary", "Bc."));
+        // System.out.println(absolvent);
+        // Vypise:
+        // Volam sa ...
+        // Moji znami:
+        // Bc. Tomas Stray ...
     }
 
     public static int scitaj(int a, int b) {
