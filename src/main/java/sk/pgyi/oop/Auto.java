@@ -23,6 +23,15 @@ public class Auto {
         kapacitaNadrze = 100;
     }
 
+    // Polymorfizmus - mozem mat viac konstruktorov {alebo aj metody}
+    // s rovnakym menom ale s inymi datovymi typmi, cize tu nemozem mat
+    // dalsi konstruktor s jednym parametrom double... bo uz taky mam.
+    // Ak nestanovim v konstruktore kapacituNadrze tak sa nastavi na 100.
+    public Auto(double kapacitaNadrze) {
+        neojazdene = true;
+        this.kapacitaNadrze = kapacitaNadrze;
+    }
+
     public void drive(double distanceInKm) {
         stavNadrze -= distanceInKm * FUEL_PER_KM;
         if (stavNadrze<0){
