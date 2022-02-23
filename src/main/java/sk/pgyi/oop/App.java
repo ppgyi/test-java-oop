@@ -150,6 +150,12 @@ public class App {
         skoda.drive(100);
 //        System.out.println(skoda.stavNadrze); --- To iste, ak by bolo public
         System.out.println(skoda.getStavNadrze()); // getter pri private
+
+
+        // ==== Nova trieda - DEDENIE ======
+        Contact contact = new Contact("Peter", "Palagyi");
+        // Tu mozeme pouzit aj var variables - v triedach sa to neda pouzit:
+        var contact2 = new Contact("Martin", "Klingac");
     }
 
     public static int scitaj(int a, int b) {
