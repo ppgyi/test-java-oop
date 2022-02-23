@@ -32,6 +32,15 @@ public class Auto {
         this.kapacitaNadrze = kapacitaNadrze;
     }
 
+    // Konstruktor ktory zavola sam seba:
+    //    public Auto(double kapacitaNadrze){
+    //        neojazdene = true;
+    //        this.kapacitaNadrze = kapacitaNadrze;
+    //    }
+    //    public Auto(){
+    //        this(100);
+    //    }
+
     public void drive(double distanceInKm) {
         stavNadrze -= distanceInKm * FUEL_PER_KM;
         if (stavNadrze<0){
