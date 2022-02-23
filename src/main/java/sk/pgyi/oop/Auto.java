@@ -14,7 +14,7 @@ public class Auto {
 
     public int one; // viem sa dostat stale
     int two; // neviem sa dostat pokial je class v inom package
-    protected int three; //nieco s dedenim
+    protected int three; //pri dedeni moze dcera pouzit tento atribut
     private int four; // neviem sa dostat
 
     // Konstruktor vytvara instancie a zadava prvotne hodnoty

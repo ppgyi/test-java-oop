@@ -152,10 +152,26 @@ public class App {
         System.out.println(skoda.getStavNadrze()); // getter pri private
 
 
-        // ==== Nova trieda - DEDENIE ======
+        // ==== Nova trieda  ======
         Contact contact = new Contact("Peter", "Palagyi");
         // Tu mozeme pouzit aj var variables - v triedach sa to neda pouzit:
         var contact2 = new Contact("Martin", "Klingac");
+        var contact3 = new Contact("Jana Kratka");
+        var contact4 = Contact.parseFromFullName("Ivan Kral");
+
+        var contacts = new Contact[] {contact2, contact3, contact4};
+        contact.setFriends(contacts);
+        // alebo
+        contact.setFriends(contact4, contact3, contact2);
+
+        // === DEDENIE ===
+        var student = new Contact("Andrej Novy");
+        var absolvent = new Graduate("Tomas", "Stary", "Bc.");
+
+        // Dcera vie pouzivat atributy ale aj metody matky,
+        // popripade override (prepise, pretazi) metody matky.
+        System.out.println(student.akoText());
+        System.out.println(absolvent.akoText());
     }
 
     public static int scitaj(int a, int b) {
