@@ -2,7 +2,7 @@ package sk.pgyi.oop;
 
 import java.util.Arrays;
 
-public class Contact {
+public class Contact implements Znami {
 
     private String firstName;
     private String surname;
@@ -49,6 +49,15 @@ public class Contact {
     @Override
     public String toString() {
         return String.format("Volam sa %s", this.akoText());
+    }
+
+    // === INTERFACE ===
+    // Metoda musi byt pouzita lebo sme implements interface Znami!!
+    // Automaticky sa to bude dat pouzit aj v triede Graduate ktora dedi
+    // (extends) tuto triedu (nemusime davat Graduate implements Znami)
+    @Override
+    public String getZnami() {
+        return null;
     }
 
     // === ABSTRAKTNE TRIEDY ===
