@@ -1,6 +1,8 @@
 package sk.pgyi.oop;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Objects;
 
 public class App {
@@ -187,6 +189,19 @@ public class App {
         // Volam sa ...
         // Moji znami:
         // Bc. Tomas Stray ...
+
+
+        // Priklad k Interface aj k LinkedList<>()
+        var zoznam = new LinkedList<Znami>();
+        zoznam.add(new NoZnami());
+        zoznam.add(new Graduate("Tomas", "Stary", "Bc."));
+        zoznam.add(1, new NoZnami());
+        System.out.println(zoznam.size());
+        zoznam.add(new NoZnami());
+        zoznam.remove(0);
+
+        // ArrayList<>() - je to to iste ako LinkedList (tento zere viac pamate)
+        var zoznam2 = new ArrayList<Znami>();
     }
 
     public static int scitaj(int a, int b) {
