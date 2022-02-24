@@ -202,6 +202,11 @@ public class App {
 
         // ArrayList<>() - je to to iste ako LinkedList (tento zere viac pamate)
         var zoznam2 = new ArrayList<Znami>();
+
+        // for cyklus a interface:
+        for(Znami prvok : zoznam){
+            System.out.println(prvok.getZnami());
+        }
     }
 
     public static int scitaj(int a, int b) {
