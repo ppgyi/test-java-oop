@@ -1,6 +1,11 @@
-package sk.pgyi.oop.Animals;
+package sk.pgyi.oop;
 
-public class Bird extends Animal{
+public class Bird extends Animal {
+
+    public Bird(String name) {
+        super(name);
+    }
+
     @Override
     public void makeSound() {
         System.out.println("Chirp chirp");
