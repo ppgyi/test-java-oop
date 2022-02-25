@@ -3,6 +3,7 @@ package sk.pgyi.oop;
 import sk.pgyi.oop.Animals.Animal;
 import sk.pgyi.oop.Animals.Bird;
 import sk.pgyi.oop.Animals.Dog;
+import sk.pgyi.oop.Enum.SvetoveStrany;
 
 import java.util.*;
 
@@ -219,13 +220,34 @@ public class App {
         // chceme pri Bird spustit jeho vlastnu metodu, ktoru nepozna rodic
         // Animal, lebo je iba v Bird preto potrebujeme vybrat len to
         // animal ktore je instanciou triedy Bird a prekastujeme ho na Bird,
-        // potom uz bud epoznat metodu repeat()!
+        // potom uz bud epoznat metodu repeat()! {Pretypovanie}
         for (Animal animal : animals){
             animal.makeSound();
             if (animal instanceof Bird){
                 ((Bird) animal).repeat("Hello word");
             }
         }
+
+        // ENUM enumeracie
+        // netreba vytvarat instancie cez "new"
+        SvetoveStrany strana = SvetoveStrany.SEVER;
+        if (strana == SvetoveStrany.SEVER){
+            System.out.println("rovne");
+        } else {
+            System.out.println("nerovne");
+        }
+        // takto sa daju iterovat (asi cyklus)
+        for (SvetoveStrany sveStra : SvetoveStrany.values()){
+            System.out.println(sveStra);
+        }
+        // SvetoveStrany.valueOf("SEVER") --- musi byt velkym
+        // V enum moze byt switch: --- ale nerobi sa to, radsej si v enume
+        // urobim vlasnte metody a pouzijem tie!
+        // SvetoveStrany s;
+        // switch(s) {
+        //      case SEVER:
+        //      case JUH: ...
+        // }
     }
 
     public static int scitaj(int a, int b) {
