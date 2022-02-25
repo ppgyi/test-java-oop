@@ -248,6 +248,49 @@ public class App {
         //      case SEVER:
         //      case JUH: ...
         // }
+
+        // === EXCEPTIONS ===
+        // toto je len pre jednoduche throw
+//        for (var str : SvetoveStrany.values()) {
+//            checkServer(str);
+//        }
+        // ked mame vlastnu vynimku a pouzivame try catch
+        // + existuje aj nieco ako Finally (vzdy sa uskutocni)
+        System.out.println("pred");
+        for (var str : SvetoveStrany.values()){
+            try {
+                System.out.println("try pred");
+                checkServer2(str);
+                System.out.println("try po");
+            } catch (NotSeverException e) {
+                System.out.println("catch");
+                e.printStackTrace();
+        //  } catch (NotSeverOrJuhException e)... Mozem mat viac vynimiek
+            } finally {
+                System.out.println("finally");
+            }
+            System.out.println("po");
+        }
+    }
+
+    // === EXCEPTIONS ===
+    // najskor vyhodi je sever a potom 1x exception a skonci
+    // throw vyvolava vynimku
+    static void checkServer(SvetoveStrany str){
+        if(str == SvetoveStrany.SEVER){
+            System.out.println("je sever");
+        } else {
+            throw new IllegalArgumentException("Musi byt sever");
+        }
+    }
+    // ked mame vlastnu vynimku musaime to urobit takto:
+    // najskor vyhodi je sever a potom 3x exception a skonci bez chyby
+    static void checkServer2(SvetoveStrany str) throws NotSeverException {
+        if(str == SvetoveStrany.SEVER){
+            System.out.println("je sever");
+        } else {
+            throw new NotSeverException("Musi byt sever");
+        }
     }
 
     public static int scitaj(int a, int b) {
