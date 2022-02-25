@@ -1,9 +1,10 @@
 package sk.pgyi.oop;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Objects;
+import sk.pgyi.oop.Animals.Animal;
+import sk.pgyi.oop.Animals.Bird;
+import sk.pgyi.oop.Animals.Dog;
+
+import java.util.*;
 
 public class App {
     public static void main(String[] args){
@@ -206,6 +207,24 @@ public class App {
         // for cyklus a interface:
         for(Znami prvok : zoznam){
             System.out.println(prvok.getZnami());
+        }
+
+        // Priklad k dedeniu, abstraktnej triede, iteracii, kastovaniu tried
+        // Chceme List<>, Vytvorime ArrayList<> ktory je mozne upravovat ale
+        // nie je mozne do neho vkladat na priamo objekty, preto do neho
+        // vlozime List.of() do ktoreho sa da vkladat ale neda sa upravovat
+        List<Animal> animals = new ArrayList<>(List.of(new Bird(), new Bird(),
+                new Bird(), new Dog(), new Dog(), new Bird()));
+        // Teraz spustime postupne kazdemu objektu metodu z rodica +
+        // chceme pri Bird spustit jeho vlastnu metodu, ktoru nepozna rodic
+        // Animal, lebo je iba v Bird preto potrebujeme vybrat len to
+        // animal ktore je instanciou triedy Bird a prekastujeme ho na Bird,
+        // potom uz bud epoznat metodu repeat()!
+        for (Animal animal : animals){
+            animal.makeSound();
+            if (animal instanceof Bird){
+                ((Bird) animal).repeat("Hello word");
+            }
         }
     }
 
