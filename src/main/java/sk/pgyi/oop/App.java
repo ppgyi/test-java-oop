@@ -8,15 +8,17 @@ public class App {
                 new Dog("Luna"), new Bird("Polly"),
                 new Bird("Orol")));
 
-        // Sortovanie - zoradenie prva moznost
-        animals.sort(null);
+        // LAMBDA - anonymna f-cia, cez sipku, teraz nemusim mat
+        // AnimalComparator tiedu! Staci takto:
+        animals.sort((o1, o2) -> {
+            return o1.toString().compareTo(o2.toString());
+        });
+        // Jednoduchy zapis:
+        animals.sort((o1, o2) -> o1.toString().compareTo(o2.toString()));
 
-        System.out.println(animals.toString());
+        // Preddefinovana metoda: (to iste ako prve a druhe)
+        animals.sort(Comparator.comparing(Animal::toString));
 
-        // [Luna, Orol, Polly, Rex]
-
-        // pri druhom sposobe:
-        animals.sort(new AnimalComparator());
         System.out.println(animals.toString());
     }
 }
