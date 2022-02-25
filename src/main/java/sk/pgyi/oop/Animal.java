@@ -1,6 +1,7 @@
 package sk.pgyi.oop;
 
-public abstract class Animal {
+// Musim dat implements comparable + override compareTo!!
+public abstract class Animal implements Comparable<Animal>{
 
     private String name;
 
@@ -9,4 +10,16 @@ public abstract class Animal {
     }
 
     public abstract void makeSound();
+
+    // Ak chceme aby sa to triedilo naopak tak dame minus:
+    //  return -this.name.compareTo(o.name);
+    @Override
+    public int compareTo(Animal o) {
+        return this.name.compareTo(o.name);
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

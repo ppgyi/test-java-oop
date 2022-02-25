@@ -8,7 +8,15 @@ public class App {
                 new Dog("Luna"), new Bird("Polly"),
                 new Bird("Orol")));
 
-        // Sortovanie - zoradenie
+        // Sortovanie - zoradenie prva moznost
         animals.sort(null);
+
+        System.out.println(animals.toString());
+
+        // [Luna, Orol, Polly, Rex]
+
+        // pri druhom sposobe:
+        animals.sort(new AnimalComparator());
+        System.out.println(animals.toString());
     }
 }
