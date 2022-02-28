@@ -1,25 +1,60 @@
 package sk.pgyi.oop;
 
-import java.util.ArrayList;
+import com.sun.tools.javac.Main;
+
+import java.io.*;
 
 public class App {
     public static void main(String[] args){
 
-        // === GENERICKE TYPY ===
-        ArrayList<Message> messages = new ArrayList<>();
+        // =======================================================
+        // TAKTO NIE, bo cez File - blbne ta cesta ked zbuildim na jar!!
 
-        messages.add(new Message("Hello"));
-        messages.add(new Message("world"));
+//        File myFile = new File("src"+File.separator+"main"+
+//                File.separator+"resources"+File.separator+"myTextFile");
+//
+////        FileInputStream fio;
+//        FileReader fileReader;
+//
+//        try {
+////            fio = new FileInputStream(myFile);
+//            fileReader = new FileReader(myFile);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//            return;
+//        }
+//
+//        BufferedReader reader = new BufferedReader(fileReader);
+//
+//        try {
+//            for (String line = reader.readLine(); line != null;
+//                 line = reader.readLine()){
+//                System.out.println(line);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-        for (Message m:messages){
-            System.out.println(m.getContent());
+        // ======================================================
+        // TAKTO:
+        InputStream is = Main.class.getClassLoader().getResourceAsStream("myTextFile");
+
+        if (is == null) {
+            System.out.println("'myTextFile' nie je v resources");
+            return;
         }
 
-        // Rozne objekty v generickom type (Charac..., List<>) a Map a HashMap
-        ConcreteIndex concreteIndex = new ConcreteIndex();
-        concreteIndex.add(new Message("Hello"));
-        concreteIndex.add(new Message("world"));
-        concreteIndex.add(new Message("Hello world"));
-        System.out.println(concreteIndex.toString());
+        InputStreamReader isr = new InputStreamReader(is);
+
+        BufferedReader reader = new BufferedReader(isr);
+
+        try {
+            for (String line = reader.readLine(); line != null;
+                 line = reader.readLine()){
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
