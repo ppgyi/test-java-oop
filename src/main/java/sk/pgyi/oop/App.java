@@ -1,19 +1,25 @@
 package sk.pgyi.oop;
 
+import java.util.ArrayList;
+
 public class App {
     public static void main(String[] args){
 
-        // break a continue s labelom, presunie na vonkajsi cyklus:
-        vonkajsiFor:
-        for (int i = 0; i < 100; i++){
-            for (int j = 10; j > 0; j--){
-                System.out.println("---");
-                if (i%4 == 0){
-                    continue vonkajsiFor;
-                }
-                System.out.println(i + ", " + j);
-            }
+        // === GENERICKE TYPY ===
+        ArrayList<Message> messages = new ArrayList<>();
+
+        messages.add(new Message("Hello"));
+        messages.add(new Message("world"));
+
+        for (Message m:messages){
+            System.out.println(m.getContent());
         }
-        System.out.println("koniec");
+
+        // Rozne objekty v generickom type (Charac..., List<>) a Map a HashMap
+        ConcreteIndex concreteIndex = new ConcreteIndex();
+        concreteIndex.add(new Message("Hello"));
+        concreteIndex.add(new Message("world"));
+        concreteIndex.add(new Message("Hello world"));
+        System.out.println(concreteIndex.toString());
     }
 }
